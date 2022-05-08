@@ -4,3 +4,6 @@
 
 # Ignore Docs files
 Docs/
+
+# Ignore virtual environment
+venv/
