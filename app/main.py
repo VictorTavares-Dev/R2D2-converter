@@ -1,2 +1,7 @@
+from app.user.User import User
 
-print('Hello, World! \\o/')
+user = User()
+
+user_name = user.get_user_name()
+
+print(f"user_name = {user_name}")
