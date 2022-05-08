@@ -1,6 +1,7 @@
 
-# Ignore Docs files
+# Ignore files
 Docs/
+Logs/
 
 # Ignore virtual environment
 venv/

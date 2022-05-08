@@ -1,7 +1,12 @@
+import traceback
+from app.log.Logger import Logger
 from app.user.User import User
 
-user = User()
+logger = Logger()
+user = User(logger)
 
-user_name = user.get_user_name()
+user.get_user_name()
 
-print(f"user_name = {user_name}")
+logger.info(f"Nome de usuário = {user.user_name}")
+logger.info(f"Iniciando o projeto!")
+
