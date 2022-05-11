@@ -5,7 +5,7 @@ from app.converter.Converter import Converter
 
 logger = Logger()
 user = User(logger)
-converter = Converter()
+converter = Converter(logger)
 
 user.get_user_name()
 
@@ -28,9 +28,7 @@ if option == 1:
 
     converter.decimal = decimal
     logger.info(f"Numero informado: {decimal}")
-    logger.info(f"Convertendo o numero {decimal} para a base binaria")
     print("\nConvertendo numero para binario...")
     binary = converter.to_binary()
-    logger.info(f"Conversao realizada com sucesso. Numero resultante: {binary}")
     print(f"RESULTADO: {binary}")
 
