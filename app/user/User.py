@@ -53,13 +53,14 @@ class User:
                 self.logger.warn("Nome de usuario deve ser maior do que uma letra e nao pode conter numeros, simbolos"
                                  " ou espacos!")
 
-                print("Erro! Nome de usuário deve ser maior do que uma letra e nao pode conter numeros, simbolos ou "
+                print("ERRO: Nome de usuário deve ser maior do que uma letra e nao pode conter numeros, simbolos ou "
                       "espacos!")
                 self.logger.info("Solicitando nova entrada de nome do usuario.")
 
                 name = str(input("Por favor, insira o seu primeiro nome: "))
             else:
                 self.user_name = name
+                print(f"\nOla, {self.user_name}. O que deseja fazer?")
                 self.logger.info(f"Nome recuperado com sucesso. Nome inserido: {self.user_name}")
 
         except BaseException as e:
