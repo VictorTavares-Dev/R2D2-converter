@@ -63,5 +63,5 @@ class User:
                 print(f"\nOla, {self.user_name}. O que deseja fazer?")
                 self.logger.info(f"Nome recuperado com sucesso. Nome inserido: {self.user_name}")
 
-        except BaseException as e:
+        except Exception as e:
             self.logger.error("Falha na recuperação de nome do usuário.", traceback.format_exc())

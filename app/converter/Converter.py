@@ -8,6 +8,8 @@ class Converter:
 
     Attributes
     ----------
+    logger: Logger
+        the logger class of the application.
     decimal: int
         the decimal number to be converted to another numeric base.
     binary: str
@@ -30,11 +32,11 @@ class Converter:
         method to call the base_converter() with base '16' parameter for hexadecimal conversion.
     """
     def __init__(self, logger: Logger, decimal=None, binary=None, octal=None, hexal=None):
+        self.logger = logger
         self.decimal = decimal
         self.binary = binary
         self.octal = octal
         self.hexal = hexal
-        self.logger = logger
 
     def base_converter(self, base):
         """
