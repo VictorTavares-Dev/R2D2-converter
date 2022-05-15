@@ -10,6 +10,8 @@ class User:
     ----------
     user_name : str
         first name of the user.
+    logger : Logger
+        the log class of the application.
 
     Methods
     -------
@@ -18,16 +20,6 @@ class User:
     """
 
     def __init__(self, logger: Logger, user_name=None):
-        """
-        Constructs all the necessary attributes for the user object.
-
-        Parameters
-        ----------
-            user_name : str
-                first name of the user.
-            logger : Logger
-                logger for logging purposes.
-        """
         self.user_name = user_name
         self.logger = logger
 
@@ -47,7 +39,7 @@ class User:
             self.logger.info("Recuperando nome de usuario da entrada via console.")
             name = str(input("Por favor, insira o seu primeiro nome: "))
 
-            # Checks if name is empty
+            # Checks if name is empty and has no special characters
             while not (len(name) >= 2 and name.isalpha()):
                 self.logger.info(f"Nome recuperado com sucesso. Nome inserido: {name}")
                 self.logger.warn("Nome de usuario deve ser maior do que uma letra e nao pode conter numeros, simbolos"

@@ -6,7 +6,7 @@ from prettytable import PrettyTable
 
 class Console:
     """
-    A class to represent a console application to get sn show info to the user.
+    A class to represent a console application to get and show info to the user.
 
     Attributes
     ----------
@@ -17,13 +17,13 @@ class Console:
     converter: Converter
         the converter class of the application.
     option: str
-        the main menu option retrieved from user input.
+        the main menu option retrieved from user's input.
     list_of_options: List
-        a list tha represent the actual option value based on the number retrieved from user input.
+        a list that represents the actual option value based on the number retrieved from user's input.
     new_option: str
-        the new option retrieved from user input at continue menu.
+        the new option retrieved from user's input at continue menu.
     results_list: List
-        the list of converted numbers based on user input.
+        the list of converted numbers based on user's input.
 
     Methods
     -------
@@ -48,8 +48,7 @@ class Console:
         method to validate option chosen by the user retrieved from continue_menu(). Depending on the option chosen by
         the user, this method is responsible to end the application.
     """
-    def __init__(self, user: User, logger: Logger, converter: Converter, option=None, new_option=None,
-                 results_list=None):
+    def __init__(self, user: User, logger: Logger, converter: Converter, option=None, new_option=None, results_list=None):
         if results_list is None:
             results_list = []
         self.user = user
@@ -334,12 +333,12 @@ class Console:
             self.logger.info("Encerrando aplicacao")
             print(f"\nObrigado por escolher a R2D2 Numeric Base Converter, {self.user.user_name}!")
             print("Abaixo, segue uma relação dos numeros que voce converteu:\n")
-            self.logger.info(f"Lista de conversoes realizadas:")
 
             table = PrettyTable(['NUMERO DECIMAL', 'BASE CONVERTIDA', 'RESULTADO'])
             for item in self.results_list:
                 table.add_row(item)
 
-            self.logger.info(f"\n{table}")
-
             print(table)
+
+            self.logger.info(f"Lista de conversoes realizadas:")
+            self.logger.info(f"\n{table}")
